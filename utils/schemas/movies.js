@@ -2,7 +2,9 @@
 
 const joi = require('joi');
 
-const movieIdSchema = joi.string().regex(/^[0-9a-fA-F]{24}$/);
+const movieIdSchema = joi.object().keys({
+  movieId: joi.string().regex(/^[0-9a-fA-F]{24}$/),
+});
 
 const createMovieSchema = joi.object().keys({
   title: joi.string().max(80).required(),

@@ -34,7 +34,7 @@ function moviesAppRoutes(app) {
 
   router.get(
     '/:movieId',
-    validationHandler({ movieId: movieIdSchema }, 'params'),
+    validationHandler(movieIdSchema, 'params'),
     async (req, res, next) => {
       const { movieId } = req.params;
 
@@ -72,7 +72,7 @@ function moviesAppRoutes(app) {
 
   router.put(
     '/:movieId',
-    validationHandler({ movieId: movieIdSchema }, 'params'),
+    validationHandler(movieIdSchema, 'params'),
     validationHandler(updateMovieSchema),
     async (req, res, next) => {
       const { movieId } = req.params;
@@ -93,7 +93,7 @@ function moviesAppRoutes(app) {
 
   router.delete(
     '/:movieId',
-    validationHandler({ movieId: movieIdSchema }, 'params'),
+    validationHandler(movieIdSchema, 'params'),
     async (req, res, next) => {
       const { movieId } = req.params;
 

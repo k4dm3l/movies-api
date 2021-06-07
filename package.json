@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index",
     "start": "NODE_ENV=production node index",
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "cover": "nyc npm run test"
   },
   "keywords": [],
   "author": "",
